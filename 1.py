@@ -1,15 +1,12 @@
-#Functions are often used to validate input. Write a function that accepts a single
-#integer as a parameter and returns True if the integer is in the range 0 to 100
-#(inclusive), or False otherwise. Write a short program to test the function.
+#Using command-line arguments involves the sys module. Review the docs for this
+#module and using the information in there write a short program that when run
+#from the command-line reports what operating system platform is being used.
 
-def is_in_range(number):
-    return 0 <= number <= 100
+import sys
 
-# Test the function
-test_number = int(input("Enter an integer to test: "))
-result = is_in_range(test_number)
+def report_platform():
+    platform = sys.platform
+    print(f"The operating system platform is: {platform}")
 
-if result:
-    print(f"{test_number} is in the range 0 to 100.")
-else:
-    print(f"{test_number} is NOT in the range 0 to 100.")
+if __name__ == "__main__":
+    report_platform()
