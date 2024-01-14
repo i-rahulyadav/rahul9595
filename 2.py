@@ -1,12 +1,17 @@
-#Write a program that, when run from the command line, reports how many
-#arguments were provided. (Remember that the program name itself is not an
-#argument).
+#Write and test a function that takes an integer as its parameter and returns the
+#factors of that integer. (A factor is an integer which can be multiplied by another to
+#yield the original).
 
-import sys
+def find_factors(n):
+    factors = []
+    for i in range(1, n + 1):
+        if n % i == 0:
+            factors.append(i)
+    return factors
 
-def report_argument_count():
-    num_arguments = len(sys.argv) - 1  # Subtracting 1 to exclude the program name
-    print(f"Number of command-line arguments provided: {num_arguments}")
+# Example usage:
+number = 12
+result = find_factors(number)
+print(f"The factors of {number} are: {result}")
 
-if __name__ == "__main__":
-    report_argument_count()
+

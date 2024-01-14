@@ -1,12 +1,21 @@
-#Using command-line arguments involves the sys module. Review the docs for this
-#module and using the information in there write a short program that when run
-#from the command-line reports what operating system platform is being used.
+#Write a function that accepts a positive integer as a parameter and then returns a
+#representation of that number in binary (base 2).
+#Hint: This is in many ways a trick question. Think!
 
-import sys
 
-def report_platform():
-    platform = sys.platform
-    print(f"The operating system platform is: {platform}")
+def decimal_to_binary(n):
+    if n == 0:
+        return '0b0'  # Binary representation of 0
 
-if __name__ == "__main__":
-    report_platform()
+    binary_representation = ''
+    while n > 0:
+        remainder = n % 2
+        binary_representation = str(remainder) + binary_representation
+        n //= 2
+
+    return '0b' + binary_representation
+
+# Example usage:
+decimal_number = 42
+binary_representation = decimal_to_binary(decimal_number)
+print(f"The binary representation of {decimal_number} is: {binary_representation}")
